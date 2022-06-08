@@ -1,20 +1,28 @@
-import { NgModule } from '@angular/core';
+import { Component, Directive, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+  routingComponents,
+  
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
+
+
+
