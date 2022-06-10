@@ -18,11 +18,20 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content:space-around;
+    
 }
+.cards
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 .card{
     cursor:pointer;
     
     display: flex;
+    flex-wrap: nowrap;
     background: white;
     min-width: 200px;
     max-width: 300px;
@@ -30,8 +39,11 @@
     min-height: 370px;
     border-radius: 5%;
     margin: 50px;
-
+    flex-direction: row;
 }
+
+
+
 .card:hover{
     transform: scale(1.1);
 }

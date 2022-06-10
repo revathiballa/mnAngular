@@ -1,11 +1,14 @@
 <div *ngFor="let product of products">
-<div class="card">
-    <div class="productHolder">
-        <img src={{product.image}} alt={{product.title}}/>
-        <div class="cardText">
-            <p class="categoryText">{{product.description}}</p>
-            <h2 class="brandText">{{product.brand}}</h2>
-            <p class="priceText">{{product.price}}</p>
+<div class="cards">
+    <div class="card">
+    
+        <div class="productHolder">
+            <img class="card-img-top" src="{{product.image}}" alt="{{product.title}}" />
+            <div class="cardText">
+                <p class="categoryText">{{product.description}}</p>
+                <h2 class="brandText">{{product.brand}}</h2>
+                <p class="priceText">{{product.price}}</p>
+            </div>
         </div>
     </div>
 </div>
