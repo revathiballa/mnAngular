@@ -1,7 +1,5 @@
-<div *ngFor="let product of products">
 <div class="cards">
-    <div class="card">
-    
+    <div *ngFor="let product of products" class="card">
         <div class="productHolder">
             <img class="card-img-top" src="{{product.image}}" alt="{{product.title}}" />
             <div class="cardText">
@@ -11,5 +9,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>
