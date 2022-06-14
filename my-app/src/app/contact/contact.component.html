@@ -1,3 +1,13 @@
 <h2>contact list</h2>
-<div *ngFor="let list of contacts_list">
-{{list|json}}</div>
+<div class="cards">
+<div *ngFor="let list of contacts_list" class="card">
+    <div class="productHolder">
+        <div class="cardText">
+<p class="categoryText">{{list|json}}</p>
+</div>
+</div>
+</div>
+
+
+    
+       
