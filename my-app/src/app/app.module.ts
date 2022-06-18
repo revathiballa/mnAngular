@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ConfigService } from './config.service';
+import { ContactService } from './contact.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
   routingComponents,
-  
+
   ],
   imports: [
     FormsModule,
@@ -19,11 +19,11 @@ import { ConfigService } from './config.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ConfigService],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 }
 
 
