@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { observable } from 'rxjs';
-import { ConfigService } from '../config.service'; 
-import { todos } from 'src/todo'; 
+import { TodoService } from '../todo.service'; 
+import { Todo } from 'src/todo'; 
 
 
 @Component({
@@ -11,13 +11,13 @@ import { todos } from 'src/todo';
 })
 export class ContactComponent implements OnInit {
 
-  public contacts_list : todos[] =[];
-
-  constructor(private _service:ConfigService) { }
+  public todos:Todo[]=[];
+  constructor(private _service:TodoService) { }
   ngOnInit(): void {
 
-    this._service.getDetails()
-    .subscribe(data => this.contacts_list = data);
+    this._service.getTodos()
+    .subscribe( data => this.todos = data);
+      console.log(this.todos);   
   }
  
     

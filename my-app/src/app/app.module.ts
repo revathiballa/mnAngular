@@ -4,8 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ConfigService } from './config.service';
-
+import { TodoService } from './todo.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,7 @@ import { ConfigService } from './config.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ConfigService],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
