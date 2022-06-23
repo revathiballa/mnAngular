@@ -1,74 +1,105 @@
+<body>
 
-
-<div class="header">
-  <a href="#default"><img class="image" src="https://logopond.com/logos/7f2b1ece9e8f115000223181f2cafeb3.png"
-      height="80" width="100"></a>
- 
-  <div class="header-right">
-    <a class="active" href="#home">Home</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-  </div>
-</div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class=" navbar-nav">
-        <li class="dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">Home <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="nav-item"><a class="nav-link" href="#">New</a> </li>
-            <li class="nav-item"><a class="nav-link" href="#">Save</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Close</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#"> Gallery</a></li>
-        <li class="nav-item"><a routerLink="/products" class="nav-link" href="#">Products</a></li>
-        <li class="nav-item"><a routerLink="/contact" class="nav-link" href="#">Contact us</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav ml-auto">
-        <li><a routerLink="/register">
-            <span class="fa fa-user"></span> Sign Up</a></li>
-        <li><a routerLink="/login">
-            <span class="fas fa-sign-in-alt"></span> Login</a></li>
-      </ul>
-
-
+  <div class="header">
+    <div class="container">
+      
+        <a href="#"><img src="./assets/img/logo.jpg" height="100" width="130"><h2>MooN</h2></a>
+      
     </div>
+  </div>
+  
+  <div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class=" navbar-nav">
+          <li class="active"><a class="nav-link" href="#">Home </a> </li>
+          <li class="nav-item"><a class="nav-link" href="#"> Gallery</a></li>
+          <li class="nav-item"><a routerLink="/products" class="nav-link" href="#">Products</a></li>
+          <li class="nav-item"><a routerLink="/contact" class="nav-link" href="#">Contact us</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav ml-auto">
+          <li><a routerLink="/register">
+              <span class="fa fa-user"></span> Sign Up</a></li>
+          <li><a routerLink="/login">
+              <span class="fas fa-sign-in-alt"></span> Login</a></li>
+        </ul>
+
+
+      </div>
+    </nav>
   </div>
-</nav>
-<div class="carousel-item">
-  <img src="data:image/jpeg;base64,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" alt="earth_day">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>Earth day activities</h5>
+
+  <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="./assets/img/bicycle_day.jpeg" height=400 width=100 alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>World Bicycle_day Celebrations</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/img/mass_yoga.jpg" alt="Second slide" height=400 width=100>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Mass Yoga</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/img/NAT_2022.jpg" alt="Third slide" height=400 width=100>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>National Awards to Teachers_2022</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/img/PPC2022.jpg" alt="Second slide" height=400 width=100>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Pariksha pe charcha_2022
+            </h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/img/winners_yoga.jpeg" alt="Second slide" height=400 width=100>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Winners of Yoga Day</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/img/yoga_day_agrafort.jpeg" alt="Second slide" height=400 width=100>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>YOga_day @ Agra Fort</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/img/yoga_day.jpg" alt="Second slide" height=400 width=100>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>International Yoga Day Celebrations</h5>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </div>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN-ccpH0qE5LxQtBBj5r9atq5ejavm2i-IlQ&usqp=CAU" alt="yoga_day">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>International Yoga Day</h5>
-  </div>
-  <img src="" alt="yoga_day">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>Earth day activities</h5>
-  </div>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN-ccpH0qE5LxQtBBj5r9atq5ejavm2i-IlQ&usqp=CAU" alt="yoga_day">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>Earth day activities</h5>
-  </div>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN-ccpH0qE5LxQtBBj5r9atq5ejavm2i-IlQ&usqp=CAU" alt="yoga_day">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>Earth day activities</h5>
-  </div>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN-ccpH0qE5LxQtBBj5r9atq5ejavm2i-IlQ&usqp=CAU" alt="yoga_day">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>Earth day activities</h5>
-  </div>
-</div>
+</body>
 <router-outlet></router-outlet>

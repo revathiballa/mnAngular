@@ -2,19 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { observable, Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { Todo } from 'src/todo';
+import { User } from 'src/users';
 import {HttpService} from './http.service'
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class TodoService {
+export class UsersService {
 
-  constructor(private http : HttpService) { }
-  getTodos():Observable<Todo[]>
+  constructor(private http:HttpService) { }
+  getUsers():Observable<User[]>
   {
-     return this.http.getTodos();
-        
+    return this.http.getUsers();
   }
-  
 }
