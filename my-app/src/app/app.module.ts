@@ -6,12 +6,13 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoService } from './todo.service';
 import { UserComponent } from './user/user.component';
+import { UsersService } from './users.service';
+import { HttpService } from './http.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-  routingComponents,
-  UserComponent,
+  routingComponents
   
   ],
   imports: [
@@ -20,7 +21,7 @@ import { UserComponent } from './user/user.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [TodoService],
+  providers: [TodoService,UsersService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

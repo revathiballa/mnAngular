@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { observable } from 'rxjs';
 import { User } from 'src/users';
 import { UsersService } from '../users.service';
-debugger;
+import { table } from 'console';
 
 @Component({
   selector: 'app-user',
