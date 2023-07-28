@@ -1,11 +1,19 @@
 <h2>contact list</h2>
-<div class="cards">
-    <div *ngFor="let todo of todos" class="card">
-        <div class="productHolder">
-            <div class="cardText">
+<div class="table">
+<div *ngFor="let todo of todos">
+        
+            <tr>
+                <td>
+                    {{todo.id}}
+                </td>
+                <td>
+                    {{todo.title}}
+                </td>
+            </tr>
             
-                <p class="categoryText">{{todo.id}}</p>
-            </div>
-        </div>
-    </div>
+               
+               
+            
+        </div>        
+    
 </div>

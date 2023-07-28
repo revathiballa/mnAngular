@@ -8,12 +8,28 @@ import { TodoService } from './todo.service';
 import { UserComponent } from './user/user.component';
 import { UsersService } from './users.service';
 import { HttpService } from './http.service';
+import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './error/error.component';
+import { ProductService } from './product.service';
+import { ProductDetailComponent } from './product-detail/product-detail.component'
+import { ProductsComponent } from './products/products.component';
+import { LoginComponent } from './login/login.component';
+import { ContactComponent } from './contact/contact.component';
+import { RegisterComponent } from './register/register.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-  routingComponents
-  
+  routingComponents,
+  HomeComponent,
+  ErrorComponent,
+  ProductDetailComponent,
+  ProductsComponent,
+  LoginComponent,
+  ContactComponent,
+  UserComponent,
+  RegisterComponent
   ],
   imports: [
     FormsModule,
@@ -21,7 +37,7 @@ import { HttpService } from './http.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [TodoService,UsersService, HttpService],
+  providers: [TodoService,UsersService, HttpService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

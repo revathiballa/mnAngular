@@ -1,7 +1,159 @@
 <div class="container-fluid">
   <h1>Registration Form</h1>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+    
+    <p>
+      <label for="firstname">First Name </label>
+      <input type="text" id="firstname" name="firstname" #firstname="ngModel" minlength="3" pattern="[a-zA-Z ]*" required [(ngModel)]="contact.firstname">
+    </p>
+    <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)" class="error">
+      <small class="text-danger" *ngIf="firstname?.hasError('required')">
+        First Name is required
+      </small>
+      <small class="text-danger" *ngIf="firstname?.hasError('minlength')">
+       Minimum length required
+      </small>
+      <small class="text-danger" *ngIf="firstname.hasError('pattern')">
+        Only characters are allowed
+      </small>
+    </div>
+    
+  
+    <p>
+      <label for="lastname">Last Name </label>
+      <input type="text" id="lastname" name="lastname" #lastname="ngModel" maxlength="15"  pattern="[a-zA-Z ]*" required [(ngModel)]="contact.lastname">
+    </p>
+    <div *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)" class="error">
+      <small class="text-danger" *ngIf="lastname.hasError('required')">
+      Last Name is required
+      </small>
+      <small class="text-danger" *ngIf="lastname.hasError('maxlength')">
+      Last Name Minimum Length should be entered
+      </small>
+      <small class="text-danger" *ngIf="lastname.hasError('pattern')">
+      Only characters are allowed
+      </small>
+    </div>
+    <p>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" #email="ngModel" required email [(ngModel)]="contact.email">
+    </p>
+    <div *ngIf="!email?.valid && (email?.dirty || email?.touched)" class="error">
+      <small class="text-danger" *ngIf="email.hasError('required')">
+        Email is required
+      </small>
+      <small class="text-danger" *ngIf="email.hasError('email')">
+        Invalid Email Address
+      </small>
+    </div>
+    <p>
+      <label for="pwd">Create Password</label>
+      <input type="password" id="pwd" name="pwd" #pwd="ngModel" required [(ngModel)]="contact.pwd">
+    </p>
+    <div *ngIf="!pwd?.valid && (pwd?.dirty || pwd?.touched)" class="error">
+      <small class="text-danger" *ngIf="pwd.hasError('required')">
+        Password is required
+      </small>
+    </div>
+    <p>
+      <label for="re_pwd">Re-enter Password</label>
+      <input type="password" id="re_pwd" name="re_pwd" #re_pwd="ngModel" required [(ngModel)]="contact.re_pwd">
+    </p>
+    <div *ngIf="!re_pwd?.valid && (re_pwd?.dirty || re_pwd?.touched)" class="error">
+      <small class="text-danger" *ngIf="re_pwd.hasError('required')">
+        Password is required
+      </small>
+      
+    </div>
+    <small class="text-danger" *ngIf="pwd.value!=re_pwd.value">
+      Re-entered password should match the given Password
+    </small>
+   
+    <p>
+      <label for="gender" >Gender </label>
+      <input type="radio" value="male" id="gender" name="gender" #gender="ngModel" required [(ngModel)]="contact.gender"> Male
+      <input type="radio" value="female" id="gender" name="gender" #gender="ngModel" required [(ngModel)]="contact.gender"> Female
+    </p>
+    <p>
+      <label for="num">Phone number </label>
+      <input type="tel"  id="num" name="num" required #num="ngModel" pattern="^\d{10}$" [(ngModel)]="contact.num"> 
+    </p>
+    <div *ngIf="!num?.valid && (num?.dirty || num?.touched)" class="error">
+      <small class="text-danger" *ngIf="num.hasError('required')">
+        Phone number is required
+      </small>
+    
+      <small class="text-danger" *ngIf="num.hasError('pattern')">
+      phone number should be 10 digits
+      </small>
+     </div>
+    
+    <!--<p>
+      <label for="country">country </label>
+      <select id="country" name="country" ngModel>
+        <option [ngValue]="c.id" *ngFor="let c of countryList">
+          {{c.name}}
+        </option>
+      </select>
+    </p>-->
+   
+    <div ngModelGroup="address">
+   
+      <p>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" #city="ngModel" required pattern="[a-zA-Z ]*" [(ngModel)]="contact.address.city">
+      </p>
+      <div *ngIf="!city?.valid && (city?.dirty || city?.touched)" class="error">
 
-  <form #userForm="ngForm">
+        <small class="text-danger" *ngIf="city.hasError('required')">
+          city Name is required
+        </small>
+        <small class="text-danger" *ngIf="city.hasError('pattern')">
+          Only characters are allowed
+        </small>
+      </div>
+      <p>
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" #state="ngModel" required pattern="[a-zA-Z ]*" [(ngModel)]="contact.address.state">
+      </p>
+      <div *ngIf="!state?.valid && (state?.dirty || state?.touched)" class="error">
+       
+        <small class="text-danger" *ngIf="state.hasError('required')">
+          State Name is required
+        </small>
+        <small class="text-danger" *ngIf="state.hasError('pattern')">
+          Only characters are allowed
+        </small>
+      </div>
+      <p>
+        <label for="pincode">Pin Code</label>
+        <input type="text" id="pincode" name="pincode"  required #pincode="ngModel" minlength="5" maxlength="7" [(ngModel)]="contact.address.pincode">
+      </p>
+      <div *ngIf="!pincode?.valid && (pincode?.dirty || pincode?.touched)"   class="error">
+       <small class="text-danger"> Invalid pincode</small>
+        <small class="text-danger" *ngIf="pincode.hasError('required')">
+          pincode is required
+        </small>
+        
+      </div>
+   
+    </div>
+   
+    <p>
+      <button type="button" (click)="setDefaults()">Set Defaults</button>
+      <button type="button" (click)="reset(contactForm)">Reset</button>
+      <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+    </p>
+    <pre><b>View</b>{{contactForm.value|json}}</pre>
+    <pre><b>valid</b> {{contactForm.valid}} </pre>
+    <pre><b>touched</b> {{contactForm.touched}} </pre>
+    <pre><b>pristine</b> {{contactForm.pristine}} </pre>
+    <pre><b>dirty</b> {{contactForm.dirty}} </pre>
+   
+  </form>
+ </div>  
+
+<!-- <form #userForm="ngForm">
     {{userForm.value|json}}
     <div class="form-group">
       <label>Name:</label>
@@ -64,4 +216,4 @@
     </div>
     <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit"> submit</button>
   </form>
-</div>
+-->

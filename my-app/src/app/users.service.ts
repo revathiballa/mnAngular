@@ -6,6 +6,9 @@ import { User } from 'src/users';
 import {HttpService} from './http.service'
 
 
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,5 +18,9 @@ export class UsersService {
   getUsers():Observable<User[]>
   {
     return this.http.getUsers();
+    
+    
   }
 }
+
+
