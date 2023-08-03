@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { observable } from 'rxjs';
-import { TodoService } from '../todo.service'; 
-import { Todo } from 'src/todo'; 
+import { Server } from 'http';
+
+//import { observable } from 'rxjs';
+//import { TodoService } from '../todo.service'; 
+//import { Todo } from 'src/todo'; 
 
 
 @Component({
@@ -11,14 +13,14 @@ import { Todo } from 'src/todo';
 })
 export class ContactComponent implements OnInit {
 
-  public todos:Todo[]=[];
-  constructor(private _service:TodoService) { }
+  //public todos:Todo[]=[];
+  constructor(/*private _service:TodoService*/) { }
   ngOnInit(): void {
 
-    this._service.getTodos()
+   /* this._service.getTodos()
     .subscribe( data => this.todos = data);
-      console.log(this.todos);   
+      console.log(this.todos); */  
   }
  
-    
+  
 }

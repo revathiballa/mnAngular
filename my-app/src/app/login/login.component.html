@@ -1,4 +1,4 @@
-<form #userForm="ngForm">
+<form #userForm="ngForm" (ngsubmit)="onSubmit(userForm)">
     <h1 class="loginH1">Log-in</h1>
     <label class="control-label col-md-3">Username</label>
     <div class="col-md-9">
@@ -8,7 +8,7 @@
         name="username"
         placeholder="username" #username="ngModel"
         [class.is-invalid]="username.invalid && username.touched"
-        ngModel required
+        [(ngModel)]="login.name" required
       />
       <small class="text-danger" [class.d-none]="username.valid || username.untouched">UserName required</small>
     </div>
@@ -22,7 +22,7 @@
         #password="ngModel"
         id="pwd"
         [class.is-invalid]="password.invalid && password.touched"
-         required ngModel
+         required [(ngModel)]="login.pwd"
       />
       <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password required</small>
     </div>

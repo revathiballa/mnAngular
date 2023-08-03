@@ -1,19 +1,20 @@
 {
-  "posts": [
+  "people": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Monvee"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Nirvigna"
+    },
+    {
+      "id": "3",
+      "name": "Balla Revathi"
+    },
+    {
+      "id": "4",
+      "name": "sai"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

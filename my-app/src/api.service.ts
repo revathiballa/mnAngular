@@ -6,20 +6,20 @@ import { Observable, observable } from "rxjs";
 @Injectable({providedIn:'root'})
  export class ApiService
  {
-    baseURL:string="https://my-json-server.typicode.com/revathiballa/api";
+    baseURL:string="http://localhost:3000/";//"https://my-json-server.typicode.com/revathiballa/api";
     constructor(private http:HttpClient)
     {
 
     }
     getPeople():Observable<Person[]>{
-        console.log('getPeople'+this.baseURL+'/people')
-        return this.http.get<Person[]>(this.baseURL+'/people')
+        console.log('getPeople'+this.baseURL+'people')
+        return this.http.get<Person[]>(this.baseURL+'people')
     }
     addPerson(person:Person):Observable<any>{
         const headers={'content-type':'application/json'}
         const body=JSON.stringify(person)
         console.log(body)
-        return this.http.post(this.baseURL+'/people',body,{'headers':headers})
+        return this.http.post(this.baseURL+'people',body,{'headers':headers})
         
     }
 }
